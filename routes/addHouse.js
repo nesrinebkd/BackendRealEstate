@@ -8,7 +8,9 @@ router.post('/addhouse', async (req, res) => {
     description: req.body.description,
     proprety_type: req.body.proprety_type,
     status: req.body.status,
-    address: req.body.home_features,
+    'address.wilaya': req.body.address.wilaya,
+    'address.commune': req.body.address.commune,
+    'address.street': req.body.adress.street,
     price: req.body.price,
     img: req.body.img,
   });
