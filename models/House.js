@@ -7,22 +7,20 @@ const HouseSchema = new mongoose.Schema(
     proprety_type: { type: Array, required: true },
     status: { type: Array, required: true },
 
-    address: [
-      {
-        wilaya: {
-          type: String,
-          required: true,
-        },
-        commune: {
-          type: String,
-          required: true,
-        },
-        street: {
-          type: String,
-          required: true,
-        },
+    address: {
+      wilaya: {
+        type: String,
+        required: true,
       },
-    ],
+      commune: {
+        type: String,
+        required: true,
+      },
+      street: {
+        type: String,
+        required: true,
+      },
+    },
 
     nmbr_rooms: { type: Number },
     nmbr_bathrooms: { type: Number },
