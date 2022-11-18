@@ -3,17 +3,7 @@ const User = require('../models/House');
 
 // ADD house
 router.post('/addhouse', async (req, res) => {
-  const newHouse = new House({
-    title: req.body.title,
-    description: req.body.description,
-    proprety_type: req.body.proprety_type,
-    status: req.body.status,
-    'address.wilaya': req.body.address.wilaya,
-    'address.commune': req.body.address.commune,
-    'address.street': req.body.adress.street,
-    price: req.body.price,
-    img: req.body.img,
-  });
+  const newHouse = new House(req.body);
   try {
     const savedHouse = await newHouse.save();
     res.status(201).json(savedHouse);

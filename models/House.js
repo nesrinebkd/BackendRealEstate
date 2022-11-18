@@ -4,8 +4,8 @@ const HouseSchema = new mongoose.Schema(
   {
     title: { type: String, required: true, unique: true },
     description: { type: String, required: true },
-    proprety_type: { type: Array, required: true },
-    status: { type: Array, required: true },
+    proprety_type: { type: String, required: true },
+    status: { type: String, required: true },
 
     address: {
       wilaya: {
