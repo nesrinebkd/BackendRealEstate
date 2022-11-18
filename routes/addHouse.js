@@ -3,7 +3,7 @@ const House = require('../models/House');
 const { verifyToken } = require('./verifyToken');
 
 // ADD house
-router.post('/', async (req, res) => {
+router.post('/', verifyToken, async (req, res) => {
   const newHouse = new House(req.body);
   try {
     const savedHouse = await newHouse.save();
@@ -13,4 +13,6 @@ router.post('/', async (req, res) => {
     res.status(500).json(error);
   }
 });
+
+//
 module.exports = router;
